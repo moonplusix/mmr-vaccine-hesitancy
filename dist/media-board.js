@@ -110,7 +110,7 @@ export function renderMediaBoard(stages,mediaStages){
     <a class="board-film" href="https://briandeer.com/wakefield/mmr-what-they-didnt-tell-you.htm" target="_blank" rel="noopener noreferrer" aria-label="查看相关调查纪录片 MMR: What They Didn’t Tell You，2004 年，打开外部网页"><g transform="${mediaLines.film.transform}"><image href="./assets/media-screen.webp" width="${mediaLines.film.width}" height="${mediaLines.film.height}"/>${lines(['纪录片中回顾调查经过 ↗'],540,360,55)}</g><title>打开相关调查纪录片《MMR: What They Didn’t Tell You》网页，2004 年。</title></a>
     <g class="board-drop-key" transform="translate(110 1720)" aria-label="报道总数；报道倾向，每滴表示报道篇数。支持：明确说明证据不足、引用研究等否定关联；中立：报道调查监管、提及可能关联。">
       ${depthLines(['报道总数'],0,0,25,'board-legend-text')}${depthLines(['报道倾向'],0,67,25,'board-legend-text')}
-      <path d="M132 34C130 39 124 44 124 49A7 7 0 0 0 138 49C138 44 135 38 132 34Z" fill="#ddf1f4" transform="translate(-6 -20) rotate(-20 132 49)"/>
+      <path d="${mediaLines.drops[0].d}" fill="#ddf1f4" transform="translate(${120-mediaLines.drops[0].x} ${14-mediaLines.drops[0].y})"/>
       ${depthLines(['报道篇数'],144,20,20,'board-legend-text')}${depthLines(['支持'],55,100,22,'board-legend-text')}${depthLines(['明确说明证据不足'],128,74,20,'board-legend-text')}${depthLines(['引用研究等否定关联'],190,100,20,'board-legend-text')}
       ${depthLines(['中立'],168,148,22,'board-legend-text')}${depthLines(['报道调查监管'],247,117,20,'board-legend-text')}${depthLines(['提及可能关联'],300,139,20,'board-legend-text')}
     </g>

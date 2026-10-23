@@ -145,7 +145,7 @@ caseChart.innerHTML = `<svg viewBox="0 0 750 252" aria-hidden="true" preserveAsp
   ${[0,2000,4000,6000].map(value=>`<g><path class="case-grid" d="M52 ${caseY(value)}H698"/><text class="case-axis" x="42" y="${caseY(value)+4}" text-anchor="end">${value===0?"0":`${value/1000}k`}</text></g>`).join("")}
   <path d="${caseArea}" fill="url(#case-fill)"/><polyline class="case-line" points="${casePoints.join(" ")}"/>
   ${years.map(([year,,count,deaths],index)=>`<g><circle class="case-point" cx="${caseX(index)}" cy="${caseY(count)}" r="3.7"/>${Array.from({length:deaths},(_,dot)=>`<circle class="case-death" cx="${caseX(index)}" cy="${187-dot*10}" r="3.7"/>`).join("")}${index%3===0||index===17?`<text class="case-year" x="${caseX(index)}" y="239" text-anchor="middle">${year}</text>`:""}</g>`).join("")}
-  <path class="case-death-baseline" d="M52 200H698"/><text class="case-lane-label" x="698" y="178">死亡登记 · 每点 1 例</text>
+  <path class="case-death-baseline" d="M52 200H698"/><g class="case-key"><circle class="case-death" cx="584" cy="13" r="3.7"/><text class="case-lane-label" x="698" y="17">死亡登记 · 每点 1 例</text></g>
 </svg>${years.map(([year,,count,deaths],index)=>`<button type="button" data-case="${year}" style="left:${(caseX(index)-19)/750*100}%;width:${38/750*100}%" aria-label="${year} 年 England and Wales 麻疹通知数 ${count.toLocaleString()}，死亡登记数 ${deaths}，查看来源"></button>`).join("")}`;
 function showCases(year) {
   const [, , count, deaths] = byYear.get(year);
