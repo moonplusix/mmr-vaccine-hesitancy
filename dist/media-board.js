@@ -1,5 +1,6 @@
 import { discGeometry } from './media-geometry.js';
 import { mediaLines } from './media-lines.js';
+import { mediaAnnotations } from './media-annotations.js';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lines = (copy,x,y,size=28,extra='') => `<text x="${x}" y="${y}" font-size="${size}" ${extra}>${copy.map((line,i)=>`<tspan x="${x}" dy="${i?size*1.5:0}">${escape(line)}</tspan>`).join('')}</text>`;
@@ -57,7 +58,7 @@ function referenceDrops(){
 }
 function referenceNews(){
   const blocks=[
-    [0,415,1095,['提出麻腮风联合疫苗','可能与部分儿童的行','为和发育变化有关；','同期，在论文发布记','者会上表达对联合疫','苗安全性的担忧，并','建议使用单价疫苗。']],
+    [0,415,1110,['提出麻腮风联合疫苗','可能与部分儿童的行','为和发育变化有关；','同期，在论文发布记','者会上表达对联合疫','苗安全性的担忧，并','建议使用单价疫苗。']],
     [2,1180,615,['2004年，10名共同','作者撤回论文中关','于MMR与自闭症可','能存在因果关联的','解释，韦克菲尔德','未签署撤回声明。']],
     [3,1669,461,['2010年全文撤稿','后，强调原论文未','确认疫苗与自闭症','的关联；2011年，','重申单价疫苗','建议。']],
     [5,2238,568,['2016年，在采访','中明确声称疫苗与','自闭症存在关联，','同时继续否认研究','欺诈指控。']]
@@ -101,7 +102,7 @@ export function renderMediaBoard(stages,mediaStages){
     ${mediaLines.veils.map((v,i)=>`<path class="board-reference-veil" d="${i===0?v.d.replace('1331.115478515625 538.739013671875L1061.99755859375 637.6630249023438','1331.115478515625 483.739013671875L1061.99755859375 582.6630249023438'):v.d}" fill="${v.fill}" fill-opacity="${v.opacity}" clip-path="url(#board-veil-${i})"/>`).join('')}
     ${anchors.map(([x,y],i)=>{const left=x-(i===2?110:40),baseline=1769.05-.36397*left+45;return `<circle cx="${x}" cy="${y}" r="5.6693" class="board-anchor"/>${depthLines([stages[i].period],left,baseline,25,'board-period','font-weight="650"')}`;}).join('')}
     ${referenceDrops()}
-    ${depthLines(['研究发布'],340,1045,20,'board-release-label')}
+    ${mediaAnnotations.map(a=>`<g class="board-reference-annotation" role="img" aria-label="${escape(a.label)}"><title>${escape(a.label)}</title><path d="${a.d}" fill="${a.fill}" stroke="none"/></g>`).join('')}
     ${referenceNews()}
     <a class="board-film" href="https://briandeer.com/wakefield/mmr-what-they-didnt-tell-you.htm" target="_blank" rel="noopener noreferrer" aria-label="查看相关调查纪录片 MMR: What They Didn’t Tell You，2004 年，打开外部网页"><g transform="${mediaLines.film.transform}"><image href="./assets/media-screen.webp" width="${mediaLines.film.width}" height="${mediaLines.film.height}"/>${lines(['纪录片中回顾调查经过 ↗'],540,360,55)}</g><title>打开相关调查纪录片《MMR: What They Didn’t Tell You》网页，2004 年。</title></a>
     <g class="board-drop-key" transform="translate(110 1720)" aria-label="报道总数；报道倾向，每滴表示报道篇数。支持：明确说明证据不足、引用研究等否定关联；中立：报道调查监管、提及可能关联。">
