@@ -33,9 +33,9 @@ function edgeParticipants(){
     ${[145,425].map(x=>`<path d="${drop}" transform="translate(${x} 2320)" fill="#fff"/>`).join('')}
     <g transform="translate(145 2320)" fill="none" stroke="#52617b" stroke-width="2"><rect x="-14" y="-11" width="24" height="27"/><path d="M-8-5H5M-8 0H5M-8 5H5M-8 10H0M10-5H16V16H10"/></g>
     <g transform="translate(425 2320)" fill="none" stroke="#52617b" stroke-width="2"><path d="M-16-3L0-15L16-3ZM-15 15H15M-11 12V0M-4 12V0M4 12V0M11 12V0"/></g>
-    <defs><clipPath id="participant-wakefield"><circle cx="478" cy="2320" r="27"/></clipPath><clipPath id="participant-deer"><circle cx="1200" cy="2320" r="27"/></clipPath></defs>
-    <circle cx="478" cy="2320" r="29" fill="#9b85a3"/><image href="./assets/wakefield.png" x="451" y="2293" width="54" height="54" clip-path="url(#participant-wakefield)"/>
-    <circle cx="1200" cy="2320" r="29" fill="#ddf1f4"/><image href="./assets/deer.png" x="1173" y="2293" width="54" height="54" clip-path="url(#participant-deer)"/>
+    <defs><clipPath id="participant-wakefield"><rect x="451" y="2293" width="54" height="54"/></clipPath><clipPath id="participant-deer"><rect x="1173" y="2293" width="54" height="54"/></clipPath></defs>
+    <rect x="449" y="2291" width="58" height="58" fill="#9b85a3"/><image href="./assets/wakefield.png" x="451" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-wakefield)"/>
+    <rect x="1171" y="2291" width="58" height="58" fill="#ddf1f4"/><image href="./assets/deer.png" x="1173" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-deer)"/>
     <circle cx="3235" cy="2320" r="30" fill="#fff"/><text x="3235" y="2330" text-anchor="middle" style="fill:#00206a" font-size="28" font-weight="800">事</text>
   </g>`;
 }
@@ -64,7 +64,7 @@ function referenceNews(){
   ];
   return `${blocks.map(([i,x,y,copy])=>`<g class="board-news-summary" transform="translate(${x} ${y})" data-board-news="${i}" tabindex="0" role="button" aria-label="${escape(copy.join(''))}，查看资料">${lines(copy,0,0,i===2||i===3?16:17.4,'class="board-depth-text board-news-copy"')}<rect x="-2" y="-20" width="145" height="${copy.length*(i===2||i===3?24:26.1)}" class="component-hit"/></g>`).join('')}
     ${mediaLines.photos.map(p=>`<g transform="${p.transform}">${photo(p.asset,p.asset.includes('1998')?'1998 年新闻发布会':p.asset.includes('2016')?'2016 年采访画面':'新闻资料照片',0,0,p.width,p.height)}</g>`).join('')}
-    ${[[415,1404,'《英国医学杂志》1998'],[1180,871,'Getty Images News 2007'],[1669,718,'Getty Images News 2010'],[2238,807,'Violent Metaphors 2016']].map(([x,y,t])=>depthLines([t],x,y,17,'board-muted board-photo-credit')).join('')}
+    ${[[415,1404,'《英国医学杂志》1998'],[1180,871,'Getty Images News 2007'],[1669,718,'Getty Images News 2010'],[2238,824,'Violent Metaphors 2016']].map(([x,y,t])=>depthLines([t],x,y,17,'board-muted board-photo-credit')).join('')}
     ${retractionTitle(2,'第一次论文撤稿')}${retractionTitle(3,'第二次论文撤稿')}`;
 }
 
@@ -79,8 +79,8 @@ function institutions(stages){
   ];
   return original.map(([i,x,y,title,copy,note])=>`<g class="board-institution" transform="translate(${x} ${y})">
     ${depthLines([title],-1.71,-4.70,25,'board-institution-title','font-weight="650"')}
-    <g class="board-building" data-board-institution="${i}" role="button" tabindex="0" aria-label="${title}，${copy.join('')}，查看机构资料"><image href="./assets/${stages[i].institution.asset}" x="0" y="15" width="170" height="170" preserveAspectRatio="xMidYMin meet"/><rect x="-5" y="10" width="180" height="180" class="component-hit"/></g>
-    ${depthLines(copy,190,25,17,'board-institution-copy')}${note?depthLines(i===0?['回应接种率下降','及疫苗争议。']:['证据不支持关联；','卫生部启动MMR补种。'],231.74,139.62,16,'board-institution-note'):''}
+    <g class="board-building" data-board-institution="${i}" role="button" tabindex="0" aria-label="${title}，${copy.join('')}，查看机构资料"><image href="./assets/${stages[i].institution.asset}" x="0" y="15" width="${i===6?100:170}" height="170" preserveAspectRatio="xMidYMin meet"/><rect x="-5" y="10" width="${i===6?110:180}" height="180" class="component-hit"/></g>
+    ${depthLines(copy,({0:630.81,1:1185.6,2:1593.06,4:2089.05,5:2733.62,6:3121.16})[i]-x,({0:1904,1:1737,2:1587,4:1397,5:1160,6:1025})[i]-y,17.4,'board-institution-copy')}${note?depthLines(i===0?['回应接种率下降及疫苗争议。']:['证据不支持关联；','卫生部启动MMR补种。'],(i===0?630.81:1593.06)-x,(i===0?2153:1795)-y,17.4,'board-institution-note'):''}
   </g>`).join('');
 }
 function referenceDocuments(){
@@ -99,7 +99,7 @@ export function renderMediaBoard(stages,mediaStages){
     <g id="atlas-stops">${stages.map((s,i)=>renderDisc(i,s.period,mediaStages[i].counts.total)).join('')}</g>
     <defs><clipPath id="board-veil-0"><path d="M0 0H1800V1775.984L0 2431.13Z"/></clipPath><clipPath id="board-veil-1"><path d="M0 0H3370V1204.551L0 2431.13Z"/></clipPath></defs>
     ${mediaLines.veils.map((v,i)=>`<path class="board-reference-veil" d="${i===0?v.d.replace('1331.115478515625 538.739013671875L1061.99755859375 637.6630249023438','1331.115478515625 483.739013671875L1061.99755859375 582.6630249023438'):v.d}" fill="${v.fill}" fill-opacity="${v.opacity}" clip-path="url(#board-veil-${i})"/>`).join('')}
-    ${anchors.map(([x,y],i)=>{const left=x-40,baseline=1769.05-.36397*left+45;return `<circle cx="${x}" cy="${y}" r="5.6693" class="board-anchor"/>${depthLines([stages[i].period],left,baseline,25,'board-period','font-weight="650"')}`;}).join('')}
+    ${anchors.map(([x,y],i)=>{const left=x-(i===2?110:40),baseline=1769.05-.36397*left+45;return `<circle cx="${x}" cy="${y}" r="5.6693" class="board-anchor"/>${depthLines([stages[i].period],left,baseline,25,'board-period','font-weight="650"')}`;}).join('')}
     ${referenceDrops()}
     ${depthLines(['研究发布'],340,1045,20,'board-release-label')}
     ${referenceNews()}

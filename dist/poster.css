@@ -353,16 +353,7 @@ h1,h2,h3,.stage-copy strong{text-wrap:balance}.atlas-stop strong{font-family:var
 .media-board{width:100%;max-width:none;margin:0;aspect-ratio:3210/2140}
 .media-board-art{display:block;width:100%;height:auto;overflow:hidden;font-family:var(--poster-font);color:#fff}
 .media-board-art text{fill:#f2f6ff;user-select:text}
-.media-board-art .board-depth-text{--board-perspective:460px;--board-angle:30deg;--board-axis-y:-380px;transform-origin:0 var(--board-axis-y);transform:perspective(var(--board-perspective)) rotateY(var(--board-angle))}
-.media-board-art .board-depth-out{--board-perspective:800px;--board-angle:-30deg;--board-axis-y:-240px}
-.media-board-art .board-period{--board-perspective:560px;--board-angle:29deg;--board-axis-y:-330px}
-.media-board-art .board-news-copy{--board-perspective:520px;--board-angle:28deg;--board-axis-y:-360px}
-.media-board-art .board-photo-credit{--board-perspective:600px;--board-angle:24deg;--board-axis-y:-260px}
-.media-board-art .board-institution-title{--board-perspective:540px;--board-angle:28deg;--board-axis-y:-320px}
-.media-board-art .board-institution-copy{--board-perspective:500px;--board-angle:29deg;--board-axis-y:-400px}
-.media-board-art .board-institution-note{--board-perspective:460px;--board-angle:30deg;--board-axis-y:-380px}
-.media-board-art .board-release-label{--board-perspective:540px;--board-angle:28deg;--board-axis-y:-300px}
-.media-board-art .board-legend-text{--board-perspective:460px;--board-angle:30deg;--board-axis-y:-380px}
+.media-board-art .board-depth-text{transform-origin:0 0;transform:matrix(1,-.36397,0,1,0,0)}
 .media-board-art .board-muted{fill:#cadbed}
 .board-ribbon,.board-reference-veil{pointer-events:none}
 .board-guide{pointer-events:none}
