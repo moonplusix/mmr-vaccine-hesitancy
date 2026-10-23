@@ -1,9 +1,0 @@
-{
-  "name": "mmr-media-mechanism-interactive",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "check": "node scripts/check.mjs"
-  }
-}
