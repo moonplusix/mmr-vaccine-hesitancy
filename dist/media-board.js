@@ -104,7 +104,6 @@ export function renderMediaBoard(stages,mediaStages){
     ${referenceDrops()}
     ${depthLines(['研究发布'],340,1045,20,'board-release-label')}
     ${referenceNews()}
-    ${[[1550,1480,'披露研究利益冲突'],[1550,1445,'作为被告卷入诽谤诉讼'],[1550,1410,'披露巨额法律援助资金'],[1590,1370,'记录诽谤诉讼撤回'],[1610,1295,'GMC 听证持续进行'],[1610,1265,'调查研究数据被改动'],[2040,1247,'疫苗—自闭症关联假象形成过程'],[2280,1145,'回顾韦克菲尔德四起诉讼失败'],[2250,1190,'作为被告应诉后案件被驳回']].map(([x,y,t])=>depthLines([t],x,y,17.4,'board-depth-out')).join('')}
     <a class="board-film" href="https://briandeer.com/wakefield/mmr-what-they-didnt-tell-you.htm" target="_blank" rel="noopener noreferrer" aria-label="查看相关调查纪录片 MMR: What They Didn’t Tell You，2004 年，打开外部网页"><g transform="${mediaLines.film.transform}"><image href="./assets/media-screen.webp" width="${mediaLines.film.width}" height="${mediaLines.film.height}"/>${lines(['纪录片中回顾调查经过 ↗'],540,360,55)}</g><title>打开相关调查纪录片《MMR: What They Didn’t Tell You》网页，2004 年。</title></a>
     <g class="board-drop-key" transform="translate(110 1670)" aria-label="报道总数；报道倾向，每滴表示报道篇数。支持：明确说明证据不足、引用研究等否定关联；中立：报道调查监管、提及可能关联。">
       ${depthLines(['报道总数'],0,0,25,'board-legend-text')}${depthLines(['报道倾向'],0,55,25,'board-legend-text')}
