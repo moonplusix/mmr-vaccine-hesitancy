@@ -29,11 +29,10 @@ function edgeNarrative(){
 function edgeParticipants(){
   const drop='M-26 0L0-32L26 0A26 26 0 1 1-26 0Z';
   return `<g class="board-edge-participants">
-    ${[[145,'媒体','middle'],[425,'政府','end'],[438,'安德鲁·韦克菲尔德','start'],[1200,'布莱恩·迪尔','middle'],[1395,'公众','middle']].map(([x,t,align])=>lines([t],x,2248,29,`text-anchor="${align}" font-weight="650"`)).join('')}
-    ${[145,425,1395].map(x=>`<path d="${drop}" transform="translate(${x} 2320)" fill="#fff"/>`).join('')}
+    ${[[145,'媒体','middle'],[425,'政府','end'],[438,'安德鲁·韦克菲尔德','start'],[1200,'布莱恩·迪尔','middle']].map(([x,t,align])=>lines([t],x,2248,29,`text-anchor="${align}" font-weight="650"`)).join('')}
+    ${[145,425].map(x=>`<path d="${drop}" transform="translate(${x} 2320)" fill="#fff"/>`).join('')}
     <g transform="translate(145 2320)" fill="none" stroke="#52617b" stroke-width="2"><rect x="-14" y="-11" width="24" height="27"/><path d="M-8-5H5M-8 0H5M-8 5H5M-8 10H0M10-5H16V16H10"/></g>
     <g transform="translate(425 2320)" fill="none" stroke="#52617b" stroke-width="2"><path d="M-16-3L0-15L16-3ZM-15 15H15M-11 12V0M-4 12V0M4 12V0M11 12V0"/></g>
-    <g transform="translate(1395 2320)" fill="none" stroke="#52617b" stroke-width="2"><circle cy="-8" r="6"/><circle cx="-12" cy="-3" r="4"/><circle cx="12" cy="-3" r="4"/><path d="M-9 16V5Q0-4 9 5V16M-17 16V7M17 16V7"/></g>
     <defs><clipPath id="participant-wakefield"><circle cx="478" cy="2320" r="27"/></clipPath><clipPath id="participant-deer"><circle cx="1200" cy="2320" r="27"/></clipPath></defs>
     <circle cx="478" cy="2320" r="29" fill="#9b85a3"/><image href="./assets/wakefield.png" x="451" y="2293" width="54" height="54" clip-path="url(#participant-wakefield)"/>
     <circle cx="1200" cy="2320" r="29" fill="#ddf1f4"/><image href="./assets/deer.png" x="1173" y="2293" width="54" height="54" clip-path="url(#participant-deer)"/>
@@ -93,7 +92,7 @@ export function renderMediaBoard(stages,mediaStages){
     <title id="board-title">1998—2026 年 MMR 报道与证据时间画布</title><desc id="board-description">可操作的七阶段半圆、文字图例、报道水滴，以及独立照片、建筑与资料图像。圆盘与水滴呈现报道结构，核验样本计数见详情。</desc>
     <image href="./assets/british-isles.svg" x="450" y="-140" width="2400" height="2500" opacity=".55"/>
     ${edgeNarrative()}
-    <g class="board-participant-lines" fill="none" stroke="#d7e4f5" stroke-width="1" stroke-opacity=".75"><path d="M425 2228V1800M478 2228V1820M1200 2228V1810M1395 2228V1923M478 1422V1445"/></g>
+    <g class="board-participant-lines" fill="none" stroke="#d7e4f5" stroke-width="1" stroke-opacity=".75"><path d="M425 2228V1800M478 2228V1820M1200 2228V1810M478 1422V1445"/></g>
     <path class="board-ribbon" d="${mediaLines.ribbon.d}" fill="${mediaLines.ribbon.fill}" fill-opacity="${mediaLines.ribbon.opacity}"/>
     ${mediaLines.guides.map(line=>`<path class="board-guide" d="${line.d}" fill="none" stroke="${line.stroke}" stroke-width="${line.width}" stroke-opacity="${line.opacity}" stroke-dasharray="${line.dash}" stroke-linecap="${line.cap}"/>`).join('')}
     <image href="./assets/media-legend.svg" x="100" y="610" width="830" height="400" aria-label="1998—2026年MMR争议媒体报道的立场与内容分布：半圆面积与文章篇数成正比；支持、中立、反对；明确说明证据不足、报道调查监管、将可能写为肯定相关、引用研究等否定关联、提及可能关联。"/>
