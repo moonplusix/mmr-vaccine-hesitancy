@@ -4,7 +4,7 @@ const label=(text,x,y,extra='')=>`<text x="${x}" y="${y}" ${extra}>${text}</text
 export function renderCohortChart(kind){
   if(kind==='birth')return `<svg class="coded-cohort-chart" viewBox="850 1910 1040 380" role="group" aria-label="按出生年份的确诊病例分布">
     <image href="./assets/british-isles.svg" x="1050" y="1800" width="700" height="800" opacity=".35"/>
-    ${label('确诊病例数（例）',862,1941,'font-weight="650"')}
+    ${label('麻疹确诊病例数（按出生年份划分）',862,1941,'font-weight="650"')}
     ${Array.from({length:8},(_,i)=>{const y=2191.115-i*30.7847;return `<path d="M903.705 ${y}H1855.031" class="cohort-grid"/>${label(i*10,870,y+5)}`;}).join('')}
     <path d="${geometry.birthArea}" fill="#d7cef4" fill-opacity=".7"/>
     ${geometry.birthPoints.map(p=>`<circle cx="${p.x}" cy="${p.y}" r="4.3" fill="${p.hollow?'#00206a':'#d7cef4'}" stroke="#d7cef4"/>`).join('')}
