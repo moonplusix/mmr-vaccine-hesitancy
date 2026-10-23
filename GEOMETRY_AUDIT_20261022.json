@@ -1,0 +1,12 @@
+{
+  "reference_band_area_pdf_pt2": 146309.26944904635,
+  "current_band_area_pdf_pt2": 146309.26944904635,
+  "band_area_difference_pdf_pt2": 0.0,
+  "semicircle_parts": 75,
+  "current_control_point_max_area_difference_pdf_pt2": 0.0,
+  "current_stroke_widths_pdf_pt": [
+    1.0
+  ],
+  "reference_band_opacity": 0.580002,
+  "film_transform": "matrix(.2644259,.09624316,0,.2644259,2475.1929,777.94406)"
+}

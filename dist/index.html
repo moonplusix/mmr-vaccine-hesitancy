@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="以 海报为蓝本，沿 1998—2026 年斜向时间轴探索 MMR 争议、媒体表述与公共卫生资料。" />
+    <meta name="theme-color" content="#00206a" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>信息流行病——疫苗犹豫</title>
+    <link rel="stylesheet" href="./styles.css" /><link rel="stylesheet" href="./poster.css?v=51" />
+  </head>
+  <body>
+    <a class="skip-link" href="#hesitancy">跳到海报内容</a>
+
+    <header class="topbar">
+      <h1 id="page-title" class="brand-title"><a class="brand" href="#top"><img class="project-logo" src="./favicon.svg" width="36" height="36" alt="" /><span>信息流行病——疫苗犹豫</span></a></h1>
+      <div class="top-actions">
+        <a class="top-jump" href="#explore">时间轴</a><button id="guide-button" class="text-button" type="button">如何阅读</button>
+        <span class="status-pill">2026 数据进行中</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section id="hesitancy" class="upper-poster" aria-labelledby="page-title">
+  <header class="upper-title"><div class="project-intro"><p>1998年，一项关于疫苗安全性的争议性研究引发了持续多年的公共卫生信任危机。本作品以公众科普传播为目标，通过数据可视化呈现疫苗争议的发展脉络及其社会影响。</p><p>作品结合疫苗接种率、麻疹病例、关键事件与人物关系，梳理争议的历史演变；同时聚焦新闻媒体、调查记者与政府机构的行动，结合报道数量与内容的变化，呈现争议信息的传播过程。作品旨在以真实历史事件为切入点，增进公众对信息传播及其潜在影响的认识，为公众在面对类似公共卫生争议时形成审慎、理性的判断提供参考。</p></div></header>
+  <div class="upper-subtitle"><h2>延迟的代价</h2><div class="upper-key" aria-label="数据图层图例"><button class="key-all" type="button" data-series-all aria-pressed="true">全选图层</button><div class="key-family"><b>接种覆盖 / %</b><button type="button" data-series="mmr1" aria-pressed="true"><i class="key-coverage"></i> MMR1</button><button type="button" data-series="mmr2" aria-pressed="true"><i class="key-mmr2"></i> MMR2</button></div><div class="key-family"><b>病例与死亡</b><button type="button" data-series="cases" aria-pressed="true"><i class="key-case"></i> 麻疹病例数</button><button type="button" data-series="deaths" aria-pressed="true"><i class="key-deaths"></i> 死亡人数</button></div></div></div>
+  <div class="upper-layout">
+    <div class="weave-original-wrap"><div class="figure-tools"><span>浅蓝带 MMR1 · 淡蓝带 MMR2 · 淡紫带麻疹病例 · 红圆死亡人数；细实线为 95% 参考线，点线为刻度。</span><div class="figure-tool-actions"><button type="button" data-figure-zoom="poster-weave">放大时间织带 ↓</button><button type="button" class="actor-enlarge" data-figure-zoom="poster-actors">放大角色与关系图 ↘</button></div></div><div class="weave-poster">
+      <div class="weave-art" aria-hidden="true"><svg id="weave-chart" viewBox="80 430 2830 1475" preserveAspectRatio="xMidYMid meet"></svg></div>
+      <div class="weave-labels" id="original-year-hotspots" aria-label="按年份查看核验补充"></div>
+      <div class="original-event-hotspots" aria-label="海报事件资料"><button data-upper="paper" style="--x:11%;--y:33%;--w:10%;--h:12%" aria-label="1998 年论文发表，查看资料"></button><button data-upper="population" style="--x:23%;--y:33%;--w:10%;--h:12%" aria-label="1999 年人群研究，查看资料"></button><button data-upper="withdrawal" style="--x:80%;--y:34%;--w:12%;--h:12%" aria-label="2004 年撤回解释声明，查看资料"></button><button data-upper="retraction" style="--x:9%;--y:76%;--w:10%;--h:11%" aria-label="2010 年全文撤稿，查看资料"></button><button data-upper="gmc" style="--x:50%;--y:77%;--w:12%;--h:11%" aria-label="2007 至 2010 年监管听证，查看资料"></button></div>
+      <div id="weave-readout" class="weave-readout" role="status" aria-live="polite"></div></div><a class="spike-question-link weave-spike-question" data-spike-link href="#spike-explainer" aria-label="2013 年病例为何突增？查看下方队列线索">2013 年病例为何突增？<span>查看下方队列线索 ↓</span></a><div class="weave-footnote">接种覆盖、病例与事件沿时间织带并列呈现。点击年份查看各指标的统计地区、年龄、剂次与年度定义。</div>
+    <label class="weave-year-select">查看年度统计 <select id="weave-year-select" aria-label="选择时间织带年份"></select></label></div>
+    <aside class="actor-rail actor-original" aria-labelledby="actor-title"><h3 id="actor-title" class="sr-only">疫苗争议中的关键角色</h3><div class="actor-original-art" data-original-figure="poster-actors"><img src="./assets/poster-actors.svg" alt="原海报角色关系图：韦克菲尔德、2 位未签署声明的共同作者、迪尔、戈德利、霍顿、英国医学总会，以及下方 10 位共同作者与撤稿文件。" /><div class="actor-hotspots"><button data-upper="wakefield" style="--x:43%;--y:10%;--w:34%;--h:12%" aria-label="安德鲁·韦克菲尔德，查看人物记录"></button><button data-upper="coauthors2" style="--x:43%;--y:42%;--w:34%;--h:11%" aria-label="2 位共同作者，2004 年未签署撤回解释声明"></button><button data-upper="deer" style="--x:16%;--y:62%;--w:31%;--h:12%" aria-label="布莱恩·迪尔，查看调查报道"></button><button data-upper="godlee" style="--x:69%;--y:62%;--w:33%;--h:12%" aria-label="菲奥娜·戈德利，查看编辑记录"></button><button data-upper="horton" style="--x:16%;--y:75%;--w:31%;--h:12%" aria-label="理查德·霍顿，查看期刊记录"></button><button data-upper="gmc" style="--x:69%;--y:75%;--w:33%;--h:12%" aria-label="英国医学总会，查看监管记录"></button><button data-upper="coauthors" style="--x:44%;--y:82%;--w:35%;--h:6%" aria-label="10 位共同作者，查看 2004 年撤回解释声明"></button><button data-upper="withdrawal" style="--x:43%;--y:89%;--w:28%;--h:9%" aria-label="2004 年撤回解释声明，查看文献"></button><button data-upper="retraction" style="--x:69%;--y:89%;--w:29%;--h:9%" aria-label="全文撤稿文件，查看 2010 年期刊记录"></button></div></div></aside>
+  </div>
+  <section id="spike-explainer" class="spike-explainer" aria-labelledby="spike-title"><header><p class="kicker">1995—2004 / 出生队列</p><h3 id="spike-title">长大了的易感队列</h3><p>接种率下降时期原应接受 MMR 接种的儿童逐渐长大，儿童时期的免疫空缺可能延续至青少年及成年早期。</p></header><div class="original-explanation-grid"><figure class="birth-original"><div class="original-chart" data-original-figure="poster-birth-cohorts"></div><figcaption><p>2010年至2018年间，麻疹感染风险较高的人群主要出生于1995年至2004年。这一出生队列恰好对应于MMR疫苗接种率下降时期原本应接受MMR接种的儿童。</p><p class="original-caveat">横轴表示出生年份，纵轴表示确诊病例数；悬停或聚焦点位查看数字化读数。</p><button type="button" data-figure-zoom="poster-birth-cohorts">放大出生队列图 ↗</button></figcaption></figure><figure class="age-original"><div class="original-chart" data-original-figure="poster-age-range"></div><figcaption><p>小规模暴发仍时有发生，受影响者主要为年龄较大的儿童、青少年及年轻成年人。此外，尚未达到常规接种年龄的婴幼儿同样面临感染风险。</p><p class="original-caveat">区间表示最小至最大年龄，空心点表示年龄中位数；悬停或聚焦可查看三项读数。</p><button type="button" data-figure-zoom="poster-age-range">放大年龄跨度图 ↗</button></figcaption></figure></div><p id="original-age-readout" class="original-inline-readout" aria-live="polite" hidden></p></section>
+  <details class="verified-supplement"><summary>查看已核验的接种率与病例资料 <span>指标定义、统计地区与数据来源</span></summary>
+  <div class="upper-data" aria-label="接种覆盖与麻疹监测分项图">
+    <section class="data-panel coverage-panel"><div><p class="kicker">COVERAGE / ENGLAND / 1999—2018</p><h3>三条同源接种覆盖曲线</h3><p>三条线均来自 NAO 2019 Figure 6：24 月龄 MMR1、5 岁 MMR1 与 5 岁 MMR2。它们共享地区、财政年度和来源，但年龄不同，不代表同一出生队列。</p><div class="coverage-legend" aria-label="覆盖率曲线图例"><span><i class="key-coverage"></i>MMR1 · 24 月龄</span><span><i class="key-mmr1-five"></i>MMR1 · 5 岁</span><span><i class="key-mmr2"></i>MMR2 · 5 岁</span></div></div><svg id="coverage-chart" viewBox="0 0 620 210" role="img" tabindex="0" aria-label="1999 到 2018 年英格兰三条同源 MMR 接种率；悬停或用左右方向键查看"></svg><p id="coverage-readout" class="chart-readout" role="status" aria-live="polite"></p><p class="chart-caption">≥95% 为消除战略参考阈值；NAO 表格显示到一位小数 · <a href="https://publications.parliament.uk/pa/cm201919/cmselect/cmhealth/correspondence/NAO-vaccinations-report-2019-10-25.pdf" target="_blank" rel="noopener noreferrer">NAO 2019 Figure 6 ↗</a></p></section>
+    <section class="data-panel case-panel"><div><p class="kicker">MEASLES / ENGLAND AND WALES</p><h3>麻疹通知与死亡登记</h3><p>浅紫曲线与面积表示麻疹通知数；下方每枚红点表示 1 例死亡登记。两层共用年份轴，数值分别读取；通知数不等于实验室确诊数。</p></div><div id="case-chart" class="case-chart" aria-label="1998 到 2015 年英格兰及威尔士麻疹通知数与死亡登记数"></div><p id="case-readout" class="chart-readout" role="status" aria-live="polite"></p><p class="chart-caption">悬停或聚焦各年份查看具体数值 · <a href="https://www.gov.uk/government/publications/measles-historic-confirmed-cases-notifications-and-deaths/measles-historic-confirmed-cases-notifications-and-deaths" target="_blank" rel="noopener noreferrer">官方历史表 ↗</a></p></section>
+  </div>
+  </details>
+  <p class="upper-transition">同一段历史继续沿 1998—2026 年展开：报道样本、资料复核与公共卫生行动进入斜向时间轴。<a href="#explore">继续沿时间轴阅读 ↓</a></p>
+</section>
+
+      <section id="explore" class="explore" aria-labelledby="explore-title">
+        <div class="section-head">
+          <div>
+            <p class="kicker">1998—2026 · SEVEN PERIODS</p>
+            <h2 id="explore-title">媒体传播机制解析</h2>
+          </div>
+          <p>七个时期沿时间带展开。半圆呈现报道立场与内容的层次，水滴呈现报道分布，机构与新闻资料可点选阅读。</p>
+        </div>
+
+        <div id="media-viewport" class="media-board-viewport"><div class="media-board-stage"><div id="media-board" class="media-board" aria-label="可交互的七阶段时间画布"></div><button id="board-zoom" class="board-zoom" type="button" aria-pressed="false">放大画布 ↗</button></div></div>
+      <section id="survey" class="survey" aria-labelledby="survey-title">
+        <div class="survey-head"><p class="kicker">公众 / 家长问卷</p><h2 id="survey-title">家长看法与接种决策</h2><p>英格兰 Brighton and Hove 前瞻性问卷（1999—2000 年采集，2004 年发表）。</p><p class="survey-prompt">点选任一条，查看比例、人数和题目口径 ↓</p></div>
+        <div class="survey-chart">
+          <div class="survey-legend"><span><i class="disagree"></i>不同意</span><span><i class="somewhat"></i>某种程度同意</span><span><i class="agree"></i>同意</span></div>
+          <button class="survey-row survey-row-extra" type="button" aria-controls="survey-insight" aria-label="查看他人鼓励的详细分布"><strong>他人鼓励</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:2.8%"></i><i class="somewhat" style="width:53.1%"></i><i class="agree" style="width:44.1%"></i></span><b>某种程度同意 53.1%</b></button>
+          <button class="survey-row" type="button" aria-controls="survey-insight" aria-label="查看疾病严重程度的详细分布"><strong>疾病严重程度</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:.8%"></i><i class="somewhat" style="width:13.4%"></i><i class="agree" style="width:85.9%"></i></span><b>同意 85.9%</b></button>
+          <button class="survey-row" type="button" aria-controls="survey-insight" aria-label="查看决策后果担忧的详细分布"><strong>决策后果担忧</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:2.7%"></i><i class="somewhat" style="width:13.4%"></i><i class="agree" style="width:83.9%"></i></span><b>同意 83.9%</b></button>
+          <button class="survey-row survey-row-extra" type="button" aria-controls="survey-insight" aria-label="查看既往经历的详细分布"><strong>相关经历</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:47.6%"></i><i class="somewhat" style="width:47.1%"></i><i class="agree" style="width:5.3%"></i></span><b>不同意 47.6%</b></button>
+          <button class="survey-row" type="button" aria-controls="survey-insight" aria-label="查看认为接种不健康的详细分布"><strong>认为接种不健康</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:49.5%"></i><i class="somewhat" style="width:42.3%"></i><i class="agree" style="width:8%"></i></span><b>同意 8.0%</b></button>
+          <button class="survey-row" type="button" aria-controls="survey-insight" aria-label="查看对医疗界信任的详细分布"><strong>对医疗界的信任</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:16.6%"></i><i class="somewhat" style="width:56.2%"></i><i class="agree" style="width:26.8%"></i></span><b>某种程度同意 56.2%</b></button>
+          <button class="survey-row" type="button" aria-controls="survey-insight" aria-label="查看对媒体信任的详细分布"><strong>对媒体的信任</strong><span class="survey-bar" aria-hidden="true"><i class="disagree" style="width:71.7%"></i><i class="somewhat" style="width:28.2%"></i></span><b>不同意 71.7%</b></button>
+          <button class="survey-uptake" type="button" aria-controls="survey-insight" aria-label="查看孩子两岁时 MMR 接种结果的详细分布"><span>孩子 2 岁时 MMR 接种结果</span><strong>77.7% 已接种 <i></i>22.3% 未接种</strong><span class="uptake-bar" aria-hidden="true"><i style="width:77.7%"></i></span></button>
+        </div>
+        <div id="survey-insight" class="survey-insight" aria-live="polite" aria-atomic="true"><span class="insight-kicker">选中条目 / 原研究数据</span><h3 id="survey-detail-title"></h3><p id="survey-detail-text"></p><dl id="survey-detail-values"></dl><p id="survey-detail-sample"></p></div>
+        <p class="survey-note">511 份有效问卷；上方七项为原研究表 2 的完整态度分布，因四舍五入或单题漏答，总和可能不等于 100%。接种结果为 397 / 511 名儿童在 2 岁时已接种；交互详情中的 OR 来自表 3 调整后回归，表示关联而非因果。样本不能代表全英国。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1324805/" target="_blank" rel="noopener noreferrer">阅读原始研究与表 2、3 ↗</a></p>
+      </section>
+
+        <nav class="stage-nav" aria-label="选择时间阶段">
+          <button class="stage-tab is-active" type="button" data-stage="stage-0" aria-current="step">1998—2000</button>
+          <button class="stage-tab" type="button" data-stage="stage-1">2001—2003</button>
+          <button class="stage-tab" type="button" data-stage="stage-2">2004—2009</button>
+          <button class="stage-tab" type="button" data-stage="stage-3">2010—2011</button>
+          <button class="stage-tab" type="button" data-stage="stage-4">2012—2014</button>
+          <button class="stage-tab" type="button" data-stage="stage-5">2015—2019</button>
+          <button class="stage-tab" type="button" data-stage="stage-6">2020—2026</button>
+        </nav>
+
+        <details id="media-evidence" class="media-evidence">
+          <summary>展开逐阶段核验资料<span>报道分类、逐篇来源与事件记录</span></summary>
+          <div id="media-corpus-note" class="timeline-sample-note"></div>
+        <div id="timeline-scroll" class="timeline-scroll" tabindex="0" aria-label="可按阶段导航的七阶段资料画布">
+          <div id="timeline" class="timeline" aria-live="polite"></div>
+        </div>
+
+        </details>
+      </section>
+
+    </main>
+
+    <footer class="site-footer"><div class="footer-mark"><img src="./favicon.svg" width="30" height="30" alt="" /><strong>信息流行病——疫苗犹豫</strong><span>互动数据海报 · 1998—2026</span></div><a href="#top">返回顶部 ↑</a></footer>
+
+    <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="关闭详情">×</button>
+      <p id="dialog-status" class="dialog-status"></p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-date" class="dialog-date"></p>
+      <p id="dialog-summary"></p>
+      <div class="dialog-note"><strong>阅读边界</strong><p id="dialog-note"></p></div>
+      <div id="media-detail-content" class="media-detail-content" hidden></div>
+      <a id="dialog-source" class="source-link" href="#" target="_blank" rel="noopener noreferrer">打开原始来源 ↗</a>
+    </dialog>
+
+    <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title">
+      <button class="dialog-close" type="button" aria-label="关闭阅读说明">×</button>
+      <p class="kicker">HOW TO READ</p>
+      <h2 id="guide-title">如何阅读这张动态海报</h2>
+      <ol>
+        <li>点击年份切换阶段，点报道卡片查看资料来源。</li>
+        <li>点击水滴，查看该阶段报道的分类结果。</li>
+        <li>悬停或点击图表查看数值；部分图表可以放大。</li>
+        <li>家长调查展示问卷结果，与报道样本分开呈现。</li>
+      </ol>
+    </dialog>
+
+    <div id="media-readout" class="media-readout" role="tooltip" hidden></div>
+    <dialog id="original-figure-dialog" class="original-figure-dialog" aria-labelledby="original-figure-title"><header><h2 id="original-figure-title">图表详情</h2><button id="close-original-figure" type="button" aria-label="关闭放大图">关闭 ×</button></header><div class="original-zoom-scroll"><img id="original-figure-image" alt="" /></div><p id="original-figure-note">按原始矢量比例显示；窄屏可横向查看。按 Escape 关闭。</p></dialog>
+    <dialog id="media-board-dialog" class="media-board-dialog" aria-labelledby="media-board-dialog-title"><header><h2 id="media-board-dialog-title">媒体传播机制解析 · 放大画布</h2><button type="button" data-close-media-board>关闭 ×</button></header><div id="media-board-overlay-content" class="media-board-overlay-content"></div></dialog>
+    <script type="module" src="./app.js?v=34"></script>
+    <script type="module" src="./upper.js?v=22"></script>
+  </body>
+</html>
