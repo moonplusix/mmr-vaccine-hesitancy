@@ -33,9 +33,9 @@ function edgeParticipants(){
     ${[145,425].map(x=>`<path d="${drop}" transform="translate(${x} 2320)" fill="#fff"/>`).join('')}
     <g transform="translate(145 2320)" fill="none" stroke="#52617b" stroke-width="2"><rect x="-14" y="-11" width="24" height="27"/><path d="M-8-5H5M-8 0H5M-8 5H5M-8 10H0M10-5H16V16H10"/></g>
     <g transform="translate(425 2320)" fill="none" stroke="#52617b" stroke-width="2"><path d="M-16-3L0-15L16-3ZM-15 15H15M-11 12V0M-4 12V0M4 12V0M11 12V0"/></g>
-    <defs><clipPath id="participant-wakefield"><rect x="451" y="2293" width="54" height="54"/></clipPath><clipPath id="participant-deer"><rect x="1173" y="2293" width="54" height="54"/></clipPath></defs>
-    <rect x="449" y="2291" width="58" height="58" fill="#9b85a3"/><image href="./assets/wakefield.png" x="451" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-wakefield)"/>
-    <rect x="1171" y="2291" width="58" height="58" fill="#ddf1f4"/><image href="./assets/deer.png" x="1173" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-deer)"/>
+    <defs><clipPath id="participant-wakefield"><circle cx="478" cy="2320" r="27"/></clipPath><clipPath id="participant-deer"><circle cx="1200" cy="2320" r="27"/></clipPath></defs>
+    <circle cx="478" cy="2320" r="29" fill="#9b85a3"/><image href="./assets/wakefield.png" x="451" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-wakefield)"/>
+    <circle cx="1200" cy="2320" r="29" fill="#ddf1f4"/><image href="./assets/deer.png" x="1173" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-deer)"/>
     <circle cx="3235" cy="2320" r="30" fill="#fff"/><text x="3235" y="2330" text-anchor="middle" style="fill:#00206a" font-size="28" font-weight="800">事</text>
   </g>`;
 }

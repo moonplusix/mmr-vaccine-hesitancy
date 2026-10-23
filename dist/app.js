@@ -1,5 +1,5 @@
 import {describeContentRow} from './media-content-review.js';
-import { renderMediaBoard } from "./media-board.js?v=37";
+import { renderMediaBoard } from "./media-board.js?v=38";
 import { stages } from "./data.js?v=22";
 import { mediaStages, mediaSource } from "./media-data.js";
 import { mediaMetrics, describeMediaMetric } from "./media-chart.js?v=25";
