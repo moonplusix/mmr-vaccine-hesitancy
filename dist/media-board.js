@@ -20,7 +20,7 @@ function edgeNarrative(){
   const labels=[[355,'新闻发布会'],[865,'媒体放大'],[1390,'公众恐慌与信任危机'],[2330,'麻疹病情暴发'],[3100,'社媒加速']];
   return `<g class="board-edge-narrative" aria-label="新闻发布会、媒体放大、公众恐慌与信任危机、麻疹病情暴发、社媒加速">
     <defs><marker id="narrative-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7L2 3.5Z" fill="#d7e4f5"/></marker></defs>
-    <path d="M145 2230V350H3190V315M477 350V330" fill="none" stroke="#d7e4f5" stroke-opacity=".6"/>
+    <path d="M145 350H3190V315M477 350V330" fill="none" stroke="#d7e4f5" stroke-opacity=".6"/>
     ${[[550,800],[1045,1320],[1770,2300],[2580,3065]].map(([a,b])=>`<path d="M${a} 315H${b}" stroke="#d7e4f5" marker-end="url(#narrative-arrow)"/>`).join('')}
     ${tags.map(([x,t])=>`<circle cx="${x}" cy="270" r="30" fill="#fff"/><text x="${x}" y="280" text-anchor="middle" style="fill:#00206a" font-size="28" font-weight="800">${t}</text>`).join('')}
     ${labels.map(([x,t])=>lines([t],x,323,29,'font-weight="650"')).join('')}
@@ -28,16 +28,16 @@ function edgeNarrative(){
 }
 
 function edgeParticipants(){
-  const drop='M-26 0L0-32L26 0A26 26 0 1 1-26 0Z';
+  const drop='M-35.24 0L0-50.76L35.24 0A35.24 35.24 0 1 1-35.24 0Z';
   return `<g class="board-edge-participants">
-    ${[[145,'媒体','middle'],[425,'政府','end'],[438,'安德鲁·韦克菲尔德','start'],[1200,'布莱恩·迪尔','middle']].map(([x,t,align])=>lines([t],x,2248,29,`text-anchor="${align}" font-weight="650"`)).join('')}
-    ${[145,425].map(x=>`<path d="${drop}" transform="translate(${x} 2320)" fill="#fff"/>`).join('')}
-    <g transform="translate(145 2320)" fill="none" stroke="#52617b" stroke-width="2"><rect x="-14" y="-11" width="24" height="27"/><path d="M-8-5H5M-8 0H5M-8 5H5M-8 10H0M10-5H16V16H10"/></g>
-    <g transform="translate(425 2320)" fill="none" stroke="#52617b" stroke-width="2"><path d="M-16-3L0-15L16-3ZM-15 15H15M-11 12V0M-4 12V0M4 12V0M11 12V0"/></g>
-    <defs><clipPath id="participant-wakefield"><circle cx="478" cy="2320" r="27"/></clipPath><clipPath id="participant-deer"><circle cx="1200" cy="2320" r="27"/></clipPath></defs>
-    <circle cx="478" cy="2320" r="29" fill="#9b85a3"/><image href="./assets/wakefield.png" x="451" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-wakefield)"/>
-    <circle cx="1200" cy="2320" r="29" fill="#ddf1f4"/><image href="./assets/deer.png" x="1173" y="2293" width="54" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-deer)"/>
-    <circle cx="3235" cy="2320" r="30" fill="#fff"/><text x="3235" y="2330" text-anchor="middle" style="fill:#00206a" font-size="28" font-weight="800">事</text>
+    ${[[146.274,'媒体','middle'],[422.362,'政府','middle'],[466,'安德鲁·韦克菲尔德','start'],[1245.822,'布莱恩·迪尔','middle']].map(([x,t,align])=>lines([t],x,2198,29,`text-anchor="${align}" font-weight="650"`)).join('')}
+    ${[146.142,422.369].map(x=>`<path d="${drop}" transform="translate(${x} 2273.45)" fill="#fff"/>`).join('')}
+    <g transform="translate(146.142 2273.45)" fill="none" stroke="#52617b" stroke-width="2"><rect x="-14" y="-11" width="24" height="27"/><path d="M-8-5H5M-8 0H5M-8 5H5M-8 10H0M10-5H16V16H10"/></g>
+    <g transform="translate(422.369 2273.45)" fill="none" stroke="#52617b" stroke-width="2"><path d="M-16-3L0-15L16-3ZM-15 15H15M-11 12V0M-4 12V0M4 12V0M11 12V0"/></g>
+    <defs><clipPath id="participant-wakefield"><rect x="478.557" y="2251.501" width="36" height="36"/></clipPath><clipPath id="participant-deer"><rect x="1223.512" y="2253.259" width="36" height="36"/></clipPath></defs>
+    <circle cx="496.557" cy="2269.501" r="35.238" fill="#83698b"/><image href="./assets/wakefield.png" x="478.557" y="2251.501" width="36" height="36" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-wakefield)"/>
+    <circle cx="1241.512" cy="2271.259" r="35.433" fill="#ddf1f4"/><image href="./assets/deer.png" x="1223.512" y="2253.259" width="36" height="36" preserveAspectRatio="xMidYMid slice" clip-path="url(#participant-deer)"/>
+    <circle cx="3235.338" cy="2273.45" r="35.433" fill="#fff"/><text x="3235.338" y="2283.45" text-anchor="middle" style="fill:#00206a" font-size="28" font-weight="800">事</text>
   </g>`;
 }
 
@@ -93,7 +93,10 @@ export function renderMediaBoard(stages,mediaStages){
     <title id="board-title">1998—2026 年 MMR 报道与证据时间画布</title><desc id="board-description">可操作的七阶段半圆、文字图例、报道水滴，以及独立照片、建筑与资料图像。圆盘与水滴呈现报道结构，核验样本计数见详情。</desc>
     <image href="./assets/british-isles.svg" x="450" y="-140" width="2400" height="2500" opacity=".55"/>
     ${edgeNarrative()}
-    <g class="board-participant-lines" fill="none" stroke="#d7e4f5" stroke-width="1" stroke-opacity=".75"><path d="M425 2228V1925M478 2228V1820M1200 2228V1810M478 1422V1445"/></g>
+    <g class="board-participant-lines" fill="none" stroke="#fff" stroke-width="1">
+      <path d="M146.274 355.471V748.153M146.274 884.267V1771.829M146.274 1778.358V2165.406M422.362 1922.114V2165.406M480.474 1838.228V1880.454M480.474 2097.557V2164.479M480.539 1369.992V1421.317M1245.822 1318.128V1359.502M1245.822 1384.369V1414.549M1245.822 1436.866V1702.490M1245.822 1981.787V2164.479"/>
+      <path d="M622.406 2028.949V2203.248M467.640 2204.165L625.171 2204.587M1179.116 1822.318V1998.676M1585.515 1668.549V1850.740M2078.023 1491.554V1672.708M2723.818 1267.280V1437.469M3114.566 1123.101V1295.946" stroke="#f6edf9" stroke-dasharray=".01 5" stroke-linecap="round"/>
+    </g>
     <path class="board-ribbon" d="${mediaLines.ribbon.d}" fill="${mediaLines.ribbon.fill}" fill-opacity="${mediaLines.ribbon.opacity}"/>
     ${mediaLines.guides.map(line=>`<path class="board-guide" d="${line.d}" fill="none" stroke="${line.stroke}" stroke-width="${line.width}" stroke-opacity="${line.opacity}" stroke-dasharray="${line.dash}" stroke-linecap="${line.cap}"/>`).join('')}
     <image href="./assets/media-legend.svg" x="100" y="610" width="830" height="400" aria-label="1998—2026年MMR争议媒体报道的立场与内容分布：半圆面积与文章篇数成正比；支持、中立、反对；明确说明证据不足、报道调查监管、将可能写为肯定相关、引用研究等否定关联、提及可能关联。"/>
