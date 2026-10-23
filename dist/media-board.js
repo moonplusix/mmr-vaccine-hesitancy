@@ -70,7 +70,7 @@ function referenceNews(){
 
 function institutions(stages){
   const original=[
-    [0,440,1805,'英国卫生部',['建议接种 MMR，','开展专家审查。','卫生部公开资料，','反对单价疫苗替代。'],'回应接种率下降及疫苗争议。'],
+    [0,430,1930,'英国卫生部',['建议接种 MMR，开展专','家审查。卫生部公开资','料，反对单价疫苗替代。'],'回应接种率下降及疫苗争议。'],
     [1,930,1730,'英国下议院',['2001 年首相拒答','儿子的接种情况，','引发接种猜疑。'],''],
     [2,1380,1580,'英国卫生部',['调整儿童免疫安排，','提供疫苗接种指导。'],'证据不支持关联；卫生部启动MMR补种。'],
     [4,1880,1380,'英格兰公共卫生署',['启动青少年','MMR补种，公布','补种成效。'],''],
@@ -79,8 +79,8 @@ function institutions(stages){
   ];
   return original.map(([i,x,y,title,copy,note])=>`<g class="board-institution" transform="translate(${x} ${y})">
     ${depthLines([title],-1.71,-4.70,25,'board-institution-title','font-weight="650"')}
-    <g class="board-building" data-board-institution="${i}" role="button" tabindex="0" aria-label="${title}，${copy.join('')}，查看机构资料"><image href="./assets/${stages[i].institution.asset}" x="0" y="15" width="${i===6?100:170}" height="170" preserveAspectRatio="xMidYMin meet"/><rect x="-5" y="10" width="${i===6?110:180}" height="180" class="component-hit"/></g>
-    ${depthLines(copy,({0:630.81,1:1185.6,2:1593.06,4:2089.05,5:2733.62,6:3121.16})[i]-x,({0:1904,1:1737,2:1587,4:1397,5:1160,6:1025})[i]-y,17.4,'board-institution-copy')}${note?depthLines(i===0?['回应接种率下降及疫苗争议。']:['证据不支持关联；','卫生部启动MMR补种。'],(i===0?630.81:1593.06)-x,(i===0?2153:1795)-y,17.4,'board-institution-note'):''}
+    <g class="board-building" data-board-institution="${i}" role="button" tabindex="0" aria-label="${title}，${copy.join('')}，查看机构资料"><image href="./assets/${stages[i].institution.asset}" x="0" y="${i===0?-15:15}" width="${i===0?206:i===6?100:170}" height="${i===0?183:170}" preserveAspectRatio="xMidYMin meet"/><rect x="-5" y="${i===0?-20:10}" width="${i===0?216:i===6?110:180}" height="${i===0?193:180}" class="component-hit"/></g>
+    ${depthLines(copy,({0:640,1:1185.6,2:1593.06,4:2089.05,5:2733.62,6:3121.16})[i]-x,({0:1934,1:1737,2:1587,4:1397,5:1160,6:1025})[i]-y,17.4,'board-institution-copy')}${note?depthLines(i===0?['回应接种率下降及疫苗争议。']:['证据不支持关联；','卫生部启动MMR补种。'],(i===0?630.81:1593.06)-x,(i===0?2130:1795)-y,17.4,'board-institution-note'):''}
   </g>`).join('');
 }
 function referenceDocuments(){
@@ -92,7 +92,7 @@ export function renderMediaBoard(stages,mediaStages){
     <title id="board-title">1998—2026 年 MMR 报道与证据时间画布</title><desc id="board-description">可操作的七阶段半圆、文字图例、报道水滴，以及独立照片、建筑与资料图像。圆盘与水滴呈现报道结构，核验样本计数见详情。</desc>
     <image href="./assets/british-isles.svg" x="450" y="-140" width="2400" height="2500" opacity=".55"/>
     ${edgeNarrative()}
-    <g class="board-participant-lines" fill="none" stroke="#d7e4f5" stroke-width="1" stroke-opacity=".75"><path d="M425 2228V1800M478 2228V1820M1200 2228V1810M478 1422V1445"/></g>
+    <g class="board-participant-lines" fill="none" stroke="#d7e4f5" stroke-width="1" stroke-opacity=".75"><path d="M425 2228V1925M478 2228V1820M1200 2228V1810M478 1422V1445"/></g>
     <path class="board-ribbon" d="${mediaLines.ribbon.d}" fill="${mediaLines.ribbon.fill}" fill-opacity="${mediaLines.ribbon.opacity}"/>
     ${mediaLines.guides.map(line=>`<path class="board-guide" d="${line.d}" fill="none" stroke="${line.stroke}" stroke-width="${line.width}" stroke-opacity="${line.opacity}" stroke-dasharray="${line.dash}" stroke-linecap="${line.cap}"/>`).join('')}
     <image href="./assets/media-legend.svg" x="100" y="610" width="830" height="400" aria-label="1998—2026年MMR争议媒体报道的立场与内容分布：半圆面积与文章篇数成正比；支持、中立、反对；明确说明证据不足、报道调查监管、将可能写为肯定相关、引用研究等否定关联、提及可能关联。"/>
@@ -104,11 +104,11 @@ export function renderMediaBoard(stages,mediaStages){
     ${depthLines(['研究发布'],340,1045,20,'board-release-label')}
     ${referenceNews()}
     <a class="board-film" href="https://briandeer.com/wakefield/mmr-what-they-didnt-tell-you.htm" target="_blank" rel="noopener noreferrer" aria-label="查看相关调查纪录片 MMR: What They Didn’t Tell You，2004 年，打开外部网页"><g transform="${mediaLines.film.transform}"><image href="./assets/media-screen.webp" width="${mediaLines.film.width}" height="${mediaLines.film.height}"/>${lines(['纪录片中回顾调查经过 ↗'],540,360,55)}</g><title>打开相关调查纪录片《MMR: What They Didn’t Tell You》网页，2004 年。</title></a>
-    <g class="board-drop-key" transform="translate(110 1670)" aria-label="报道总数；报道倾向，每滴表示报道篇数。支持：明确说明证据不足、引用研究等否定关联；中立：报道调查监管、提及可能关联。">
-      ${depthLines(['报道总数'],0,0,25,'board-legend-text')}${depthLines(['报道倾向'],0,55,25,'board-legend-text')}
-      <path d="M132 34C130 39 124 44 124 49A7 7 0 0 0 138 49C138 44 135 38 132 34Z" fill="#ddf1f4" transform="rotate(-20 132 49)"/>
-      ${depthLines(['报道篇数'],148,54,20,'board-legend-text')}${depthLines(['支持'],25,110,22,'board-legend-text')}${depthLines(['明确说明证据不足'],120,105,20,'board-legend-text')}${depthLines(['引用研究等否定关联'],120,140,20,'board-legend-text')}
-      ${depthLines(['中立'],25,195,22,'board-legend-text')}${depthLines(['报道调查监管'],120,190,20,'board-legend-text')}${depthLines(['提及可能关联'],120,225,20,'board-legend-text')}
+    <g class="board-drop-key" transform="translate(110 1720)" aria-label="报道总数；报道倾向，每滴表示报道篇数。支持：明确说明证据不足、引用研究等否定关联；中立：报道调查监管、提及可能关联。">
+      ${depthLines(['报道总数'],0,0,25,'board-legend-text')}${depthLines(['报道倾向'],0,67,25,'board-legend-text')}
+      <path d="M132 34C130 39 124 44 124 49A7 7 0 0 0 138 49C138 44 135 38 132 34Z" fill="#ddf1f4" transform="translate(-6 -20) rotate(-20 132 49)"/>
+      ${depthLines(['报道篇数'],144,20,20,'board-legend-text')}${depthLines(['支持'],55,100,22,'board-legend-text')}${depthLines(['明确说明证据不足'],128,74,20,'board-legend-text')}${depthLines(['引用研究等否定关联'],190,100,20,'board-legend-text')}
+      ${depthLines(['中立'],168,148,22,'board-legend-text')}${depthLines(['报道调查监管'],247,117,20,'board-legend-text')}${depthLines(['提及可能关联'],300,139,20,'board-legend-text')}
     </g>
     ${institutions(stages)}
     ${referenceDocuments()}
